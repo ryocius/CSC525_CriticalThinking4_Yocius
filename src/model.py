@@ -3,7 +3,9 @@ import math
 import torch
 from torch.nn import functional as F
 from torch import nn
-
+import spacy
+src_tokenizer = spacy.load("en_core_web_sm")
+tgt_tokenizer = spacy.load("de_core_news_sm")
 
 class PositionalEncoding(nn.Module):
     def __init__(

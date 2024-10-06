@@ -1,0 +1,34 @@
+INFO:root:Translation task: en -> de
+INFO:root:Using device: cpu
+INFO:root:Translation task: en -> de
+INFO:root:Using device: cpu
+INFO:root:Translation task: en -> de
+INFO:root:Using device: cpu
+INFO:root:Translation task: en -> de
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Translation task: de_core_news_sm -> en_core_web_sm
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Translation task: de -> en
+INFO:root:Using device: cpu
+INFO:root:Loaded data
+INFO:root:de vocab size: 19214
+INFO:root:en vocab size: 18544
+INFO:root:Model created... starting training!

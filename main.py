@@ -9,6 +9,11 @@ from tqdm import tqdm  # For fancy progress bars
 from src.model import Translator  # Our model
 from src.data import get_data, create_mask, generate_square_subsequent_mask  # Loading data and data preprocessing
 from argparse import ArgumentParser  # For args
+import spacy
+src_tokenizer = spacy.load("en_core_web_sm")
+tgt_tokenizer = spacy.load("de_core_news_sm")
+
+
 
 # Train on the GPU if possible
 DEVICE = torch.device("cuda" if torch.cuda.is_available() else "cpu")

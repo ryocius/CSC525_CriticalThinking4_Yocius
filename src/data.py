@@ -4,7 +4,9 @@ from torch.utils.data import DataLoader
 from torchtext.data.utils import get_tokenizer
 from torchtext.vocab import build_vocab_from_iterator
 from torchtext.datasets import Multi30k, multi30k
-
+import spacy
+src_tokenizer = spacy.load("en_core_web_sm")
+tgt_tokenizer = spacy.load("de_core_news_sm")
 
 # Turns an iterable into a generator
 def _yield_tokens(iterable_data, tokenizer, src):
@@ -38,9 +40,23 @@ def get_data(opts):
     train_iterator = Multi30k(split="train", language_pair=(src_lang, tgt_lang))
     valid_iterator = Multi30k(split="valid", language_pair=(src_lang, tgt_lang))
 
+    if src_lang == "de":
+        tokenizer_src_lang = "de_core_news_sm"
+    elif src_lang == "en":
+        tokenizer_src_lang = "en_core_web_sm"
+    else:
+        tokenizer_src_lang = src_lang
+
+    if tgt_lang == "de":
+        tokenizer_tgt_lang = "de_core_news_sm"
+    elif tgt_lang == "en":
+        tokenizer_tgt_lang = "en_core_web_sm"
+    else:
+        tokenizer_tgt_lang = src_lang
+
     # Grab a tokenizer for these languages
-    src_tokenizer = get_tokenizer("spacy", src_lang)
-    tgt_tokenizer = get_tokenizer("spacy", tgt_lang)
+    src_tokenizer = get_tokenizer("spacy", tokenizer_src_lang)
+    tgt_tokenizer = get_tokenizer("spacy", tokenizer_tgt_lang)
 
     # Build a vocabulary object for these languages
     src_vocab = build_vocab_from_iterator(
